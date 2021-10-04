@@ -58,6 +58,8 @@ Positive points:
 •	The tool is supporting object oriented programs developed with aspect oriented approach which aims to increase modularity.
 •	An editor is also being provided to modify the generated source code so that we can add our constraints like minimum and maximum values, specify the return type, etc., to it and the tester can also export the generated source code so that it could be tested in future.
 •	This software can also compare the source code to the UML diagram in XML format and use original test suite as source code template and can create new test suite with increased coverage compared to the original test suite.
+
+
 Negative points:
 •	As the automated test suite regeneration technique only improves the coverage of original suite by using syntax of original test suite as source code template but cannot create the test suite itself initially, we have to manually create test suite before using this tool.
 •	JUnit is being used for testing the source code of generated stubs and drivers but Junit is designed to work best only for a number of small tests which may affect as the software being checked will have a lot of classes.
