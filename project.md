@@ -14,6 +14,42 @@ The research to automate testing of a java application used a three-step process
 The tool presented in this paper can generate stubs and drivers from sequence and class diagrams inputted as XML files. It does this through the following process. A tester (a human) first inputs the XML files into the application to be stored in a database. The tool then reads the sequence diagram to identify the objects, messages and method calls. Then it proceeds to process the class diagram to find and store the packages, classes and method signatures in its database. The call graph is now created using the elements extracted from the sequence diagram, which is basically the pattern in which classes call other classes through methods. The tester chooses the classes for which the stub and driver is to be generated. He then can make the choice to use stubs generation tool which drives the application to generate stubs for mentioned classes. If these classes do not call any other classes’ methods the tool returns a warning message. Similar thing happens when the driver generation tool is clicked where drivers for required classes are generated after analysing the call graph. If the class under test is not called by methods of any other class then the tool returns a error. Final step of the process is where the app asks the user for the source code in which the stub and driver is to be generated. The user can choose to generate the stubs or the drivers. The tool also allows the modification of the stubs and drivers created in the specified language, by the user according to his needs before using it for testing.
 
 
+Objective:
+Generation of stubs and drivers for object-oriented program testing using class and sequence diagrams.
+
+Features:
+    • Stubs, drivers, testcases creation for testing source code written in java using symbolic execution technique.
+    • Stub and driver patterns generation to support integration testing of aspect-oriented programs.
+    • New test suite generation from existing test suite for improving test suite coverage.
+    • Creates call graph from sequence diagram.
+    • Identification and storage of objects, messages, method calls (from sequence diagram) classes, packages, method signatures (from class diagram).
+    • Creation of stub source code when lower-level modules are missing/in developing stage/not developed.
+    • Creation of driver source code when high level modules (sometimes even for low level ones) are not available.
+    • Alerts tester by generating warning messages if tester specifies to generate stubs but the class under the test do not call any methods of another classes.
+    • Alerts tester by generating warning messages if tester specifies to generate drivers but the class under the test is not called by any methods of other classes.
+
+
+Support for OO paradigm:
+As we know object-oriented paradigm will significantly increase the software reusability, extendibility, inter-operability, and reliability. This is true if and only if systems are tested adequately.
+Use for Object oriented program testing: Driver are programs which simulate the behaviors of software components that are the control modules of a under test module. Stubs are programs which simulate the behaviors of software components that are the dependent modules of a under test module. 
+Driver
+Tested 
+Unit
+Stub
+
+Strategies of testing for object-oriented software: - 
+1. Top-Down
+    • On Top-Down testing process the main control module is used as a test driver, and the stubs are substituted for all modules directly subordinate to the main control module, the subordinate stubs are replaced one at a time with actual modules. 
+    • The tests are conducted as each module is integrated. On completion of each set of tests, another stub is replaced with the real module.
+    •  A Top-Down approach is obviously a White Box method as in-depth knowledge of lower layers of the program's functionality is required for the generation of the stub files. 
+2. Bottom-Up
+    • Bottom-Up Testing works in reverse of Top-Down testing. 
+    • In this process the low-level modules are combined into clusters that perform a specific software sub-function. 
+    • The driver is written to coordinate test case input and output. The test cluster is tested. 
+    • Drivers are removed and clusters are combined moving upward in the program structure. 
+    • The advantages with this are that once a layer has been completely tested, it is less likely that any Bug found has occurred in that layer.
+
+
 PROPOSED SOLUTIONS/IMPROVEMENTS:
 The paper presents a technology for generating stubs and drivers for objected oriented programs. The tool is right now capable of uploading. Class and sequence diagrams in XML and then generating the stubs and drivers. But there are some limitations like
 1) our tool does not cover class diagrams that contains abstract and inner classes.
