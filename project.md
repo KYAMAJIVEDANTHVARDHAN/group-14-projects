@@ -48,6 +48,23 @@ Strategies of testing for object-oriented software: -
     • The driver is written to coordinate test case input and output. The test cluster is tested. 
     • Drivers are removed and clusters are combined moving upward in the program structure. 
     • The advantages with this are that once a layer has been completely tested, it is less likely that any Bug found has occurred in that layer.
+    
+
+Positive points:
+•	In general, during the development of any object-oriented software, it will have a lot of classes and methods which are called within the class or between different classes. So it takes quite a lot of time for creating stubs and drivers for each object and class and eventually for testing the software. So an automated testing tool is being provided which helps us a lot with testing and saves time.
+•	We only need to provide class diagram and sequential diagram and respective call graph is being created and based on our choice of which class to test and source code type, stubs and drivers are automatically generated and thus it makes it simple for the tester.
+•	In the previous available tools for stubs and drivers generation, even though they can be generated from the program flow but as source code is needed to determine the program flow, they cannot be generated until source code is finished but in mentioned tool, it is developed in such a way that the source code is not necessary to be finished before for stubs and drivers generation.
+•	The software is developed in such a way that, A warning message will be delivered for a class under test if we choose to generate stub but that class is not calling any methods of other classes or if we choose to generate driver but that class’ methods are not being called by any other classes.
+•	The tool is supporting object oriented programs developed with aspect oriented approach which aims to increase modularity.
+•	An editor is also being provided to modify the generated source code so that we can add our constraints like minimum and maximum values, specify the return type, etc., to it and the tester can also export the generated source code so that it could be tested in future.
+•	This software can also compare the source code to the UML diagram in XML format and use original test suite as source code template and can create new test suite with increased coverage compared to the original test suite.
+
+
+Negative points:
+•	As the automated test suite regeneration technique only improves the coverage of original suite by using syntax of original test suite as source code template but cannot create the test suite itself initially, we have to manually create test suite before using this tool.
+•	JUnit is being used for testing the source code of generated stubs and drivers but Junit is designed to work best only for a number of small tests which may affect as the software being checked will have a lot of classes.
+•	Even though concrete stubs related to abstract classes are mentioned in the research, the tool did not cover class diagrams that contain abstract and inner classes, interfaces and inheritance concepts including overriding.
+•	The tool is not checking whether the sequential diagram is consistent with the class diagram or not.
 
 
 PROPOSED SOLUTIONS/IMPROVEMENTS:
