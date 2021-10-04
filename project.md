@@ -1,8 +1,18 @@
+Key Points:
+	"Stubs and Drivers Generating Tool" is a web-application for generating stubs and drivers for unit testing.
+	Stubs and Drivers works as a substitute for the missing or unavailable module in software testing process. 
+	They are specifically developed, for each module, having different functionalities.
+	Although, it provides ease to carry out of individual components, without concerning the availability of other modules. 
+	But it is a time-consuming process, as it requires to develop dummy for each missing module.
+	The tool will process a call graph to identify which classes need to create stubs or which classes need to create drivers.
+	A call graph is a kind of control flow graph which shows a relationship between subroutines inside the program.
+
 
 SUMMARY:
 Stubs and Drivers Generation Tool is a web application in JS and PHP to automate the building of Stubs and Drivers using just UML diagrams (In specific only class and sequence diagrams). It is used to speed up unit testing of software applications. Stub is a piece of source code that acts as the class that is being called by the method (or a class) requiring to be tested. The Driver is the source code that contains hard wired inputs to stimulate the requirements of the method, calls the method to be tested and displays the output to be compared with expected output. Before the creation of the tool there were background researches done that had demerits.
 The research to automate testing of a java application used a three-step process to create stub-driver but required the java source code which meant that stub and driver can’t be created until source code was written for the classes involved.  Another research provided a stub and driver pattern, after analysing the aspect-oriented program provided as input but didn’t give the method to generate the stubs and drivers. Yet another research was capable of generating a new set of test cases from an already existing one using UML diagram. The problem lies in the fact that it needs the existing test suite to be generated manually.
 The tool presented in this paper can generate stubs and drivers from sequence and class diagrams inputted as XML files. It does this through the following process. A tester (a human) first inputs the XML files into the application to be stored in a database. The tool then reads the sequence diagram to identify the objects, messages and method calls. Then it proceeds to process the class diagram to find and store the packages, classes and method signatures in its database. The call graph is now created using the elements extracted from the sequence diagram, which is basically the pattern in which classes call other classes through methods. The tester chooses the classes for which the stub and driver is to be generated. He then can make the choice to use stubs generation tool which drives the application to generate stubs for mentioned classes. If these classes do not call any other classes’ methods the tool returns a warning message. Similar thing happens when the driver generation tool is clicked where drivers for required classes are generated after analysing the call graph. If the class under test is not called by methods of any other class then the tool returns a error. Final step of the process is where the app asks the user for the source code in which the stub and driver is to be generated. The user can choose to generate the stubs or the drivers. The tool also allows the modification of the stubs and drivers created in the specified language, by the user according to his needs before using it for testing.
+
 
 PROPOSED SOLUTIONS/IMPROVEMENTS:
 The paper presents a technology for generating stubs and drivers for objected oriented programs. The tool is right now capable of uploading. Class and sequence diagrams in XML and then generating the stubs and drivers. But there are some limitations like
@@ -20,4 +30,8 @@ For the future work we can add the following features like:
 1)We can enhance the feature of managing uploaded diagrams.
 2)We can also set up a feature to manage generated source code.
 3)We can also address the above limitations and improvise them such as considering consistency of sequence and class diagrams and also processing XML files more accurately.
+
+
+Conclusion:
+The process of software testing cannot be completed with incomplete components and modules. Therefore, to ensure the accuracy as well as effectiveness of testing it is vital to create "Stubs and Drivers Generating Tools". It creates stubs and drivers that fulfill the requirements of incomplete or undeveloped modules and act as pseudo modules or codes that are called in for testing the functionality of major modules. Testers can automate the unit testing without tool. It is capable for uploading sequence and class diagrams in XML file format, creating a call graph, generating stubs and drivers, editing stubs and drivers source code, and automated specifying signature values. But it has also some limitations in generating stubs and drivers from a class diagram with abstraction, inheritance,  interface class as well as overloading. It allows a tester to select only one class under test for generating them while generated drivers do not include test input values. 
 
