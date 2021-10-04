@@ -50,7 +50,7 @@ Strategies of testing for object-oriented software: -
     
 
 Positive points:
-•	During the development of any object-oriented software having a lot of classes and methods which are called within the class or between different classes, it takes quite a lot of time for creating stubs and drivers for each object and class and eventually for testing the software manually. So an automated testing tool is being provided which helps us in testing and saves our time.
+•	Generally it takes quite a lot of time for creating stubs and drivers for each object and class and eventually for testing the software manually during the development of any object-oriented software which will have a lot of classes and methods which are called within the class or between different classes. Hence the application is provided an automated testing tool which helps us in testing and saves our time.
 •	We only need to provide class diagram and sequential diagram and respective call graph is being created and based on our choice of which class to test and source code type, stubs and drivers are automatically generated and thus it makes it simple for the tester.
 •	In the previous available tools for stubs and drivers generation, even though they can be generated from the program flow but as source code is needed to determine the program flow, they cannot be generated until source code is finished but in mentioned tool, it is developed in such a way that the source code is not necessary to be finished before for stubs and drivers generation.
 •	The tool is supporting object oriented programs developed with aspect oriented approach which aims to increase modularity.
